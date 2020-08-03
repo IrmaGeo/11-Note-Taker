@@ -7,6 +7,8 @@ Create an application that can be used to write, save, and delete notes. This ap
 ## instalations
 ```npm init. npm install json --save-dev. npm install body-parser.```
 
+[This link](https://drive.google.com/file/d/1LKs_IZrukEyGmQhKR87LyyrAYgXChlzd/view?usp=sharing)
+
 ## questions
 * user - irmaGeo
 * project repository: https://github.com/IrmaGeo/11-Note-Taker
