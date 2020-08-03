@@ -7,7 +7,7 @@ const fs = require("fs");
 const bodyParser = require("body-parser");
 const { json } = require("body-parser");
 const { notStrictEqual } = require("assert");
-const PORT = 3000;
+const PORT = 8080;
 
 // Sets up the Express App
 // =============================================================
@@ -33,18 +33,33 @@ app.get("/api/notes", (req, res) => {
 // POST /api/notes - Should receive a new note to save on the request body, add it to the db.json file, and then return the new note to the client.
 app.post("/api/notes", (req, res) => {
   let note = JSON.parse(fs.readFileSync(__dirname + "/db/db.json"))
-  console.log(req.body)
-  note.push(req.body)
+  let newobj = {
+    "title": req.body.title,
+    "text": req.body.text,
+    "id": note.length,
+  }
+
+  note.push(newobj)
+  console.log(note)
+
   fs.writeFileSync(__dirname + "/db/db.json", JSON.stringify(note))
   res.json(note)
 });
 // DELETE /api/notes/:id - Should receive a query parameter containing the id of a note to delete.
 // This means you'll need to find a way to give each note a unique id
 // when it's saved.In order to delete a note, you'll need to read all notes from the db.json file, remove the note with the given id property, and then rewrite the notes to the db.json file.
+app.delete("/api/notes/:id", (req, res) => {
+  let note = JSON.parse(fs.readFileSync(__dirname + "/db/db.json"))
+  let choosen = req.params.id
+  note.splice(choosen, 1)
 
+  for (i = choosen; i < note.length; i++) {
+    note[i].id = parseInt(i)
+  }
 
+  fs.writeFileSync(__dirname + "/db/db.json", JSON.stringify(note))
 
-
+});
 
 app.listen(PORT, function () {
   console.log("App listening on PORT " + PORT);

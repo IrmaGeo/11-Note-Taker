@@ -37,6 +37,7 @@ const renderActiveNote = () => {
   $saveNoteBtn.hide();
 
   if (activeNote.id) {
+
     $noteTitle.attr("readonly", true);
     $noteText.attr("readonly", true);
     $noteTitle.val(activeNote.title);
@@ -68,10 +69,10 @@ const handleNoteDelete = function (event) {
   event.stopPropagation();
 
   const note = $(this).parent(".list-group-item").data();
-
   if (activeNote.id === note.id) {
     activeNote = {};
   }
+
 
   deleteNote(note.id).then(() => {
     getAndRenderNotes();
@@ -137,7 +138,6 @@ const renderNoteList = (notes) => {
 
 // Gets notes from the db and renders them to the sidebar
 const getAndRenderNotes = () => {
-  console.log(getNotes())
   return getNotes().then(renderNoteList);
 };
 
