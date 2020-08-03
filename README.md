@@ -7,7 +7,7 @@ Create an application that can be used to write, save, and delete notes. This ap
 ## instalations
 ```npm init. npm install json --save-dev. npm install body-parser.```
 
-[This link](https://drive.google.com/file/d/1LKs_IZrukEyGmQhKR87LyyrAYgXChlzd/view?usp=sharing)
+<img src="Develop/public/assets/11-note-taker.png" alt="there is a image">
 
 ## questions
 * user - irmaGeo
