@@ -9,6 +9,6 @@ Create an application that can be used to write, save, and delete notes. This ap
 
 ## questions
 * user - irmaGeo
-* project repository: https://github.com/IrmaGeo/11-Note-Taker/edit/master/README.md
+* project repository: https://github.com/IrmaGeo/11-Note-Taker
 * project's video link: https://drive.google.com/file/d/1_J05kfd3MnmZ6OJ7L4oMLqxBT4Q2iQHF/view?usp=sharing
 * project's heroku link: ============
