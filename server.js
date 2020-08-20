@@ -3,7 +3,7 @@ const app = express();
 const path = require("path");
 const fs = require("fs");
 const bodyParser = require("body-parser");
-const PORT = 8080;
+const PORT = 3000;
 const readfile = JSON.parse(fs.readFileSync(__dirname + "/db/db.json"))
 
 
