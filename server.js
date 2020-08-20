@@ -26,7 +26,7 @@ app.get("/api/notes", (req, res) => {
 });
 
 // POST /api/notes - Should receive a new note to save on the request body, add it to the db.json file, and then return the new note to the client.
-app.post("/api/notes", (req, res) => {
+app.post("/api/notes/post", (req, res) => {
   let note = readfile
   // add id property 
   let newObj = {
