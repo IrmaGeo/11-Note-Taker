@@ -3,7 +3,8 @@ const app = express();
 const path = require("path");
 const fs = require("fs");
 const bodyParser = require("body-parser");
-const PORT = 3000;
+var server_port = process.env.YOUR_PORT || process.env.PORT || 80;
+var server_host = process.env.YOUR_HOST || '0.0.0.0';
 const readfile = JSON.parse(fs.readFileSync(__dirname + "/db/db.json"))
 
 
@@ -55,6 +56,6 @@ app.delete("/api/notes/:id", (req, res) => {
   res.json(note)
 });
 
-app.listen(PORT, function () {
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-});
+app.listen(server_port, server_host, function () {
+  console.log('Listening on port %d', server_port);
+})
